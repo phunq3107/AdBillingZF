@@ -1,0 +1,32 @@
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka
+    fetch-registry: true
+    register-with-eureka: true
+spring:
+  kafka:
+    bootstrap-servers: localhost:29092
+  profiles:
+    active: api
+  application:
+    name: AdBillingService
+  datasource:
+    username: 'phunq'
+    password: '123456'
+    url: jdbc:postgresql://localhost:5432/account
+  jpa:
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+        format_sql: 'true'
+    hibernate:
+      ddl-auto: create-drop
+    show-sql: false
+  main:
+#    web-application-type: none
+    allow-circular-references: true
+  redis:
+    port: 6379
+    host: localhost
+    password:
